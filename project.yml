@@ -4,7 +4,6 @@ options:
   deploymentTarget:
     iOS:  "14.0"
   developmentLanguage: en
-  bundleIdPrefix: com.github.droibit
 
 settings:
   base:
@@ -16,12 +15,16 @@ targets:
     platform: iOS
     settings:
       base:
+        PRODUCT_NAME: $TARGET_NAME
+        PRODUCT_BUNDLE_IDENTIFIER: com.github.droibit.sample.${PRODUCT_NAME}
         MARKETING_VERSION: 1.0.0
         CURRENT_PROJECT_VERSION: 1
         ENABLE_PREVIEWS: true
         DEVELOPMENT_ASSET_PATHS: "\"Sources/Resources/Preview Content\""
     sources:
       - path: Sources
+    # dependencies:
+    #   - carthage: XXX
 
 schemes:
   SampleApp:
