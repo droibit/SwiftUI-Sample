@@ -26,6 +26,11 @@ targets:
       - path: Sources
     # dependencies:
     #   - carthage: XXX
+    postCompileScripts:
+      - name: Run SwiftFormat
+        script: ./scripts/swiftformat.sh
+      - name: Run SwiftLint
+        script: ./scripts/swiftlint.sh
 
 schemes:
   SampleApp:
