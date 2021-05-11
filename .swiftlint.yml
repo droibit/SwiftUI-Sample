@@ -2,11 +2,14 @@ disabled_rules:
   - file_header
   - file_name
   - force_cast
-  - force_try
-  - opening_brace  
-  - prohibited_interface_builder  
-  - trailing_comma
+  - force_try  
+  - prohibited_interface_builder    
   - unowned_variable_capture
+  # Prefer SwiftFormat
+  - opening_brace
+  - trailing_comma
+  - sorted_imports
+  - number_separator  
 opt_in_rules:
   - anyobject_protocol
   - array_init
@@ -51,7 +54,6 @@ opt_in_rules:
   - modifier_order
   - nimble_operator
   - nslocalizedstring_key
-  - number_separator
   - object_literal
   - operator_usage_whitespace
   - overridden_super_call
@@ -74,9 +76,7 @@ opt_in_rules:
   - required_enum_case
   - single_test_class
   - sorted_first_last
-  - sorted_imports
   - static_operator
-  - strong_iboutlet
   - test_case_accessibility
   - toggle_bool
   - unavailable_function
