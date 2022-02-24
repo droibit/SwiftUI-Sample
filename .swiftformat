@@ -17,11 +17,11 @@
 --self remove
 --semicolons inline
 --stripunusedargs closure-only
---swiftversion 5.3
+--swiftversion 5.5
 --trimwhitespace always
 --wraparguments preserve
 --wrapcollections preserve
 
 # rules
 --disable strongOutlets
---enable isEmpty,blankLinesAroundMark,preferKeyPath,redundantGet
+--enable isEmpty,blankLinesAroundMark,preferKeyPath,redundantGet,preferDouble,blockComments
