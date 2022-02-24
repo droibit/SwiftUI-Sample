@@ -11,9 +11,11 @@ disabled_rules:
   - sorted_imports
   - number_separator  
 opt_in_rules:
+  - anonymous_argument_in_multiline_closure
   - anyobject_protocol
   - array_init
   - attributes
+  - balanced_xctest_lifecycle
   - block_based_kvo
   - comment_spacing
   - computed_accessors_order
