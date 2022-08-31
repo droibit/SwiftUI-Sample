@@ -21,6 +21,7 @@
 --trimwhitespace always
 --wraparguments preserve
 --wrapcollections preserve
+--typeblanklines remove
 
 # rules
 --disable strongOutlets
