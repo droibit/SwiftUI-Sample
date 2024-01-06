@@ -1,14 +1,17 @@
 name: SampleApp
 options:
-  xcodeVersion: "13.0"
+  xcodeVersion: "15.0"
   deploymentTarget:
-    iOS:  "14.0"
+    iOS: "17.0"
   developmentLanguage: en
-  # postGenCommand: rbenv exec bundle exec pod install  
 
 settings:
   base:
     SWIFT_VERSION: 5.0
+
+packages:
+  SampleApp:
+    path: .
 
 targets:
   SampleApp:
@@ -17,20 +20,36 @@ targets:
     settings:
       base:
         PRODUCT_NAME: $TARGET_NAME
-        PRODUCT_BUNDLE_IDENTIFIER: com.example.${PRODUCT_NAME}
+        PRODUCT_BUNDLE_IDENTIFIER: com.github.droibit.sample.${PRODUCT_NAME}
         MARKETING_VERSION: 1.0.0
         CURRENT_PROJECT_VERSION: 1
         ENABLE_PREVIEWS: true
-        DEVELOPMENT_ASSET_PATHS: "\"Sources/Resources/Preview Content\""
+        GENERATE_INFOPLIST_FILE: true
+        ENABLE_USER_SCRIPT_SANDBOXING: false
+        INFOPLIST_KEY_CFBundleDisplayName: ${PRODUCT_NAME}
+        INFOPLIST_KEY_UILaunchStoryboardName: LaunchScreen.storyboard
+        INFOPLIST_KEY_UISupportedInterfaceOrientations:        
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
     sources:
-      - path: Sources
-    # dependencies:
-    #   - carthage: XXX
-    postCompileScripts:
-      - name: Run SwiftFormat
-        script: ./scripts/swiftformat.sh
+      - path: ./App/iOS
+    dependencies:
+      - package: SampleApp
+        products:
+          - App
+    postBuildScripts:
       - name: Run SwiftLint
-        script: ./scripts/swiftlint.sh
+        path: /bin/sh
+        script: |-
+          cd $SRCROOT/..
+
+          make lint
 
 schemes:
   SampleApp:
@@ -46,4 +65,4 @@ schemes:
     analyze:
       config: Debug
     archive: 
-      config: Debug      
+      config: Debug

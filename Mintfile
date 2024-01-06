@@ -1,3 +1,4 @@
-yonaskolb/xcodegen@2.33.0
-realm/SwiftLint@0.50.3
-nicklockwood/SwiftFormat@0.50.9
+yonaskolb/xcodegen@2.38.0
+nicklockwood/SwiftFormat@0.52.11
+realm/SwiftLint@0.54.0
+uber/mockolo@2.0.1

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+git diff --diff-filter=d --cached --name-only -- '*.swift' | while read filename; do
+  swiftformat "${filename}";
+  git add "${filename}";
+done

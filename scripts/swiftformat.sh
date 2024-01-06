@@ -1,7 +1,20 @@
 #!/bin/sh
 
-if which mint >/dev/null; then
-  xcrun --sdk macosx mint run nicklockwood/SwiftFormat swiftformat ./Sources
-else
+if ! which mint >/dev/null; then
   echo "warning: Mint not installed, download from https://github.com/yonaskolb/Mint"
-fi    
+  exit 0
+fi
+
+START_DATE=$(date +"%s")
+
+run_format() {
+  xcrun --sdk macosx mint run swiftformat swiftformat "${1}"
+}
+
+git diff --diff-filter=d --name-only -- '*.swift' | while read filename; do run_format "${filename}"; done
+git diff --cached --diff-filter=d --name-only -- '*.swift' | while read filename; do run_format "${filename}"; done
+
+END_DATE=$(date +"%s")
+
+DIFF=$(($END_DATE - $START_DATE))
+echo "SwiftFormat took $(($DIFF / 60)) minutes and $(($DIFF % 60)) seconds to complete."

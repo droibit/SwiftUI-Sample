@@ -81,10 +81,3 @@ iOSInjectionProject/
 
 # AppCode
 .idea/
-
-# XcodeGen
-*.xcworkspace
-*.xcodeproj
-
-# needle
-NeedleGenerated.swift

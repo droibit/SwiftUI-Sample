@@ -5,12 +5,12 @@ disabled_rules:
   - force_cast
   - force_try
   - force_unwrapping
-  - prohibited_interface_builder    
+  - prohibited_interface_builder   
+  - blanket_disable_command 
   # Prefer SwiftFormat
   - opening_brace
   - trailing_comma
   - sorted_imports
-  - number_separator
   - comma_inheritance
   - modifier_order
   - multiline_arguments
@@ -19,11 +19,9 @@ disabled_rules:
   - multiline_literal_brackets
   - multiline_parameters
   - multiline_parameters_brackets
-  - number_separator
   - switch_case_on_newline
 opt_in_rules:
   - anonymous_argument_in_multiline_closure
-  - anyobject_protocol
   - array_init
   - attributes
   - balanced_xctest_lifecycle  
@@ -49,7 +47,7 @@ opt_in_rules:
   - enum_case_associated_values_count  
   - empty_xctest_method
   - expiring_todo
-  - explicit_enum_raw_value
+  # - explicit_enum_raw_value
   - explicit_init
   # - explicit_type_interface
   # - explicit_acl
@@ -59,7 +57,7 @@ opt_in_rules:
   - fatal_error_message
   - first_where
   - file_name_no_space
-  - file_types_order
+  # - file_types_order
   - flatmap_over_map_reduce
   - function_default_parameter_at_end
   - ibinspectable_in_extension
@@ -75,8 +73,9 @@ opt_in_rules:
   - literal_expression_end_indentation
   - lower_acl_than_parent
   # - missing_docs
-  - modifier_order
+  - modifier_order  
   - nimble_operator
+  - number_separator  
   - nslocalizedstring_key
   - nslocalizedstring_require_bundle
   - ns_number_init_as_function_reference
@@ -102,7 +101,7 @@ opt_in_rules:
   - reduce_into
   - redundant_nil_coalescing
   - redundant_type_annotation
-  - required_deinit
+  # - required_deinit
   - required_enum_case
   - return_value_from_void_function
   # - self_binding
@@ -115,7 +114,7 @@ opt_in_rules:
   - test_case_accessibility
   - toggle_bool
   - trailing_closure
-  - type_contents_order  
+  # - type_contents_order  
   - unavailable_function
   - unneeded_parentheses_in_closure_argument
   - untyped_error_in_catch
@@ -133,14 +132,21 @@ analyzer_rules:
   - typesafe_array_init
   - unused_declaration
   - unused_import
-
+included:
+  - App
+  - Sources
+  - Tests  
 excluded:
-  - Sources/DI/NeedleGenerated.swift
-  - Sources/Resources/Generated
+  - Carthage
+  - Pods
+  - Sources/Mocks
 
 line_length:
-- 200   # warning
-- 300   # error
+  - 200   # warning
+  - 300   # error
+large_tuple: 3
+number_separator:
+  minimum_length: 5
 
 identifier_name:
   min_length: # only min_length
