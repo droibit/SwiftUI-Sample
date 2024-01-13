@@ -8,7 +8,11 @@ fi
 START_DATE=$(date +"%s")
 
 run_lint() {
-  xcrun --sdk macosx mint run swiftlint swiftlint "${1}"
+  local filepath="${1}"
+  if [ -n "${SRCROOT}" ]; then
+    filepath="${SRCROOT}/${filepath}"
+  fi  
+  xcrun --sdk macosx mint run swiftlint swiftlint "${filepath}"
 }
 
 git diff --diff-filter=d --name-only -- '*.swift' | while read filename; do run_lint "${filename}"; done

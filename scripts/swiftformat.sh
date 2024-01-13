@@ -8,7 +8,11 @@ fi
 START_DATE=$(date +"%s")
 
 run_format() {
-  xcrun --sdk macosx mint run swiftformat swiftformat "${1}"
+  local filepath="${1}"
+  if [ -n "${SRCROOT}" ]; then
+    filepath="${SRCROOT}/${filepath}"
+  fi
+  xcrun --sdk macosx mint run swiftformat swiftformat "${filepath}"
 }
 
 git diff --diff-filter=d --name-only -- '*.swift' | while read filename; do run_format "${filename}"; done
