@@ -25,7 +25,3 @@ format:
 .PHONY: lint
 lint:
 	./scripts/swiftlint.sh
-
-.PHONY: gen-mocks
-gen-mocks:
-	./gen-mocks.sh
