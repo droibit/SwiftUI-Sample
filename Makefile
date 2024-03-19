@@ -1,4 +1,5 @@
 PROJECT_NAME := SampleApp
+PROJECT_GIT_DIR := .
 
 .PHONY: bootstrap
 bootstrap:
@@ -20,8 +21,8 @@ gen-mocks:
 
 .PHONY: format
 format:
-	./scripts/swiftformat.sh
+	./scripts/swiftformat.sh $(PROJECT_GIT_DIR)
 
 .PHONY: lint
 lint:
-	./scripts/swiftlint.sh
+	./scripts/swiftlint.sh $(PROJECT_GIT_DIR)

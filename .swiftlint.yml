@@ -139,7 +139,7 @@ included:
 excluded:
   - Carthage
   - Pods
-  - Sources/Mocks
+  - Tests/Mocks
 
 line_length:
   - 200   # warning

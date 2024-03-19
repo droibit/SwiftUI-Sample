@@ -5,18 +5,16 @@ if ! which mint >/dev/null; then
   exit 0
 fi
 
+PROJECT_GIT_DIR=$1
 START_DATE=$(date +"%s")
 
 run_format() {
-  local filepath="${1}"
-  if [ -n "${SRCROOT}" ]; then
-    filepath="${SRCROOT}/${filepath}"
-  fi
+  local filepath=$(readlink -f "${PROJECT_GIT_DIR}/${1}")
   xcrun --sdk macosx mint run swiftformat swiftformat "${filepath}"
 }
 
-git diff --diff-filter=d --name-only -- '*.swift' | while read filename; do run_format "${filename}"; done
-git diff --cached --diff-filter=d --name-only -- '*.swift' | while read filename; do run_format "${filename}"; done
+git diff --diff-filter=d --name-only -- "*.swift" | while read filename; do run_format "${filename}"; done
+git diff --cached --diff-filter=d --name-only -- "*.swift" | while read filename; do run_format "${filename}"; done
 
 END_DATE=$(date +"%s")
 
