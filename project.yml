@@ -2,7 +2,7 @@ name: SampleApp
 options:
   xcodeVersion: "15.0"
   deploymentTarget:
-    iOS: "17.0"
+    iOS: "16.0"
   developmentLanguage: en
 
 settings:
