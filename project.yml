@@ -58,6 +58,8 @@ schemes:
         SampleApp: all
     run:
       config: Debug
+      environmentVariables:
+        IDEPreferLogStreaming: YES
     test:
       config: Debug
     profile: 

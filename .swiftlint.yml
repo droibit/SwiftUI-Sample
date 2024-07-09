@@ -1,7 +1,7 @@
 disabled_rules:
   - accessibility_trait_for_button
   - file_header
-  - file_name  
+  - file_name
   - force_cast
   - force_try
   - force_unwrapping
