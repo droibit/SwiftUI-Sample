@@ -3,6 +3,7 @@
 --exclude Carthage,Pods,Tests/Mocks
 
 # format options
+
 --allman false
 --commas always
 --elseposition same-line
@@ -18,12 +19,13 @@
 --self remove
 --semicolons inline
 --stripunusedargs closure-only
---swiftversion 5.9
+--swiftversion 5.10
 --trimwhitespace always
 --wraparguments preserve
 --wrapcollections preserve
 --typeblanklines remove
 
 # rules
+
 --disable strongOutlets, docComments
 --enable isEmpty,blockComments
