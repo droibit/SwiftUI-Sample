@@ -1,0 +1,21 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":dependencyDashboard",
+    ":prConcurrentLimit10",
+    ":timezone(Asia/Tokyo)",
+  ],
+  "enabledManagers": [
+    "mint",
+    "swift",
+  ],
+  "labels": [
+    "renovate",
+  ],
+  "assignees": [
+    "droibit",
+  ],
+  "packageRules": [
+  ],
+}
