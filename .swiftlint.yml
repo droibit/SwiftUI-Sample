@@ -6,7 +6,7 @@ disabled_rules:
   - force_try
   - force_unwrapping
   - prohibited_interface_builder   
-  - blanket_disable_command 
+  - blanket_disable_command   
   # Prefer SwiftFormat
   - opening_brace
   - trailing_comma
@@ -35,6 +35,7 @@ opt_in_rules:
   - contains_over_first_not_nil
   - contains_over_range_nil_comparison
   - convenience_type
+  # - contrasted_opening_brace
   - discarded_notification_center_observer
   - discouraged_assert
   - discouraged_none_name
@@ -74,6 +75,7 @@ opt_in_rules:
   - lower_acl_than_parent
   # - missing_docs
   - modifier_order  
+  # - no_empty_block
   - nimble_operator
   - number_separator  
   - nslocalizedstring_key
@@ -87,9 +89,10 @@ opt_in_rules:
   - override_in_extension
   - pattern_matching_keywords
   - prefer_nimble
+  - prefer_key_path
   - prefer_self_in_static_references
   - prefer_self_type_over_type_of_self
-  - prefer_zero_over_explicit_init
+  - prefer_zero_over_explicit_init  
   - private_action
   - private_outlet
   - private_subject
@@ -120,6 +123,7 @@ opt_in_rules:
   - unneeded_parentheses_in_closure_argument
   - untyped_error_in_catch
   # - unowned_variable_capture
+  - unused_parameter
   - vertical_parameter_alignment_on_call
   - vertical_whitespace_closing_braces
   - vertical_whitespace_opening_braces
