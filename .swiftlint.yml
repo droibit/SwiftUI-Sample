@@ -10,7 +10,7 @@ opt_in_rules:
   # - accessibility_trait_for_button
   - anonymous_argument_in_multiline_closure
   - array_init
-  - async_without_await
+  # - async_without_await
   - attributes
   - balanced_xctest_lifecycle  
   - closure_body_length
@@ -120,7 +120,7 @@ opt_in_rules:
   - shorthand_argument
   - shorthand_optional_binding
   - single_test_class
-  - sorted_enum_cases
+  # - sorted_enum_cases
   - sorted_first_last
   # - sorted_imports  
   - static_operator

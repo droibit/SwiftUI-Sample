@@ -1,17 +1,17 @@
 name: SampleApp
 options:
-  xcodeVersion: "15.0"
+  xcodeVersion: "16.0"
   deploymentTarget:
-    iOS: "16.0"
+    iOS: "17.0"
   developmentLanguage: en
 
 settings:
   base:
-    SWIFT_VERSION: 5.0
+    SWIFT_VERSION: 6.0
 
 packages:
   SampleApp:
-    path: .
+    path: ..
 
 targets:
   SampleApp:
@@ -38,7 +38,7 @@ targets:
           - UIInterfaceOrientationLandscapeLeft
           - UIInterfaceOrientationLandscapeRight
     sources:
-      - path: ./App/iOS
+      - path: ./iOS
     dependencies:
       - package: SampleApp
         products:

@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "scripts",
-    products: [],
-    targets: []
+  name: "scripts",
+  products: [],
+  targets: []
 )
