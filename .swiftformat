@@ -1,6 +1,6 @@
 # file options
 
---exclude Carthage,Pods,Tests/Mocks
+--exclude Carthage,Pods,Tests/Mocks/*.generated.swift
 
 # format options
 
@@ -28,4 +28,4 @@
 # rules
 
 --disable strongOutlets, docComments
---enable isEmpty,blockComments
+--enable isEmpty,blockComments,wrapMultilineFunctionChains,environmentEntry,privateStateVariables
