@@ -6,26 +6,26 @@
 
 --allman false
 --commas always
---elseposition same-line
+--else-position same-line
 --header ignore
 --ifdef indent
 --indent 2
---importgrouping testable-bottom
+--import-grouping testable-bottom
 --linebreaks lf
---maxwidth 200
---operatorfunc spaced
+--max-width 200
+--operator-func spaced
 --patternlet hoist
 --ranges spaced
 --self remove
 --semicolons inline
---stripunusedargs closure-only
+--strip-unused-args closure-only
 --swiftversion 6.0
---trimwhitespace always
---wraparguments preserve
---wrapcollections preserve
---typeblanklines remove
+--trim-whitespace always
+--type-blank-lines remove
+--wrap-arguments preserve
+--wrap-collections preserve
+--wrap-conditions preserve
 
 # rules
 
---disable strongOutlets, docComments
---enable isEmpty,blockComments,wrapMultilineFunctionChains,environmentEntry,privateStateVariables
+--enable isEmpty,blankLinesBetweenImports,blockComments,environmentEntry,noGuardInTests,privateStateVariables,redundantMemberwiseInit,redundantProperty,throwingTests,wrapMultilineFunctionChains,wrapMultilineStatementBraces
