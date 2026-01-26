@@ -29,17 +29,11 @@
 # rules
 
 --enable isEmpty
---enable blankLinesBetweenImports
 --enable blockComments
---enable environmentEntry
 --enable noGuardInTests
 --enable preferFinalClasses
 --enable privateStateVariables
---enable redundantMemberwiseInit
---enable redundantAsync
---enable redundantProperty
---enable redundantThrows
---enable throwingTests
---enable wrapMultilineFunctionChains
---enable wrapMultilineStatementBraces
+--enable noForceTryInTests
 --enable noForceUnwrapInTests
+--enable validateTestCases
+--enable wrapMultilineFunctionChains
