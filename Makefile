@@ -1,6 +1,9 @@
 PROJECT_NAME := SampleApp
 PROJECT_GIT_DIR := .
 
+DEVICE_NAME := iPhone 17
+OS_VERSION := 26.2
+
 .PHONY: bootstrap
 bootstrap:
 	mint bootstrap
@@ -13,6 +16,14 @@ gen-project:
 .PHONY: open-project
 open-project:
 	open ./App/$(PROJECT_NAME).xcodeproj
+
+.PHONY: build-project
+build-project:
+	set -o pipefail && xcodebuild build \
+	    -project ./App/$(PROJECT_NAME).xcodeproj \
+	    -scheme $(PROJECT_NAME) \
+	    -destination "platform=iOS Simulator,name=$(DEVICE_NAME),OS=$(OS_VERSION)" \
+	  | xcbeautify
 
 .PHONY: gen-mocks
 gen-mocks:
