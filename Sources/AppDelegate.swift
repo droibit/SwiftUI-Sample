@@ -1,7 +1,7 @@
 // swiftlint:disable discouraged_optional_collection
 public import UIKit
 
-public class AppDelegate: UIResponder, UIApplicationDelegate {
+public final class AppDelegate: UIResponder, UIApplicationDelegate {
   public func application(
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
@@ -26,10 +26,14 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 }
 
-public class SceneDelegate: NSObject, UIWindowSceneDelegate, ObservableObject {
+public final class SceneDelegate: NSObject, UIWindowSceneDelegate {
   public var window: UIWindow?
 
-  public func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+  public func scene(
+    _ scene: UIScene,
+    willConnectTo session: UISceneSession,
+    options connectionOptions: UIScene.ConnectionOptions
+  ) {
     window = (scene as? UIWindowScene)?.keyWindow
   }
 }
