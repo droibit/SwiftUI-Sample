@@ -1,15 +1,6 @@
 // swift-tools-version: 6.0
 @preconcurrency import PackageDescription
 
-// swiftformat:enable empty-extensions
-
-let debugOtherSwiftFlags = [
-  "-Xfrontend", "-warn-long-expression-type-checking=200",
-  "-Xfrontend", "-warn-long-function-bodies=200",
-  "-strict-concurrency=targeted",
-  "-enable-actor-data-race-checks",
-]
-
 let package = Package(
   name: "SampleApp",
   defaultLocalization: "en",
@@ -29,7 +20,6 @@ let package = Package(
       name: "App",
       dependencies: [
       ],
-      swiftSettings: [.unsafeFlags(debugOtherSwiftFlags, .when(configuration: .debug))],
       plugins: [
       ]
     ),
@@ -55,6 +45,12 @@ extension SwiftSetting {
   static let strictConcurrency: Self = .enableUpcomingFeature("StrictConcurrency")
 }
 
+let debugOtherSwiftFlags = [
+  "-Xfrontend", "-warn-long-expression-type-checking=200",
+  "-Xfrontend", "-warn-long-function-bodies=200",
+  "-enable-actor-data-race-checks",
+]
+
 for target in package.targets {
   guard !target.name.hasSuffix("Mocks") else {
     continue
@@ -65,5 +61,6 @@ for target in package.targets {
     .internalImportsByDefault,
     .memberImportVisibility,
     .strictConcurrency,
+    .unsafeFlags(debugOtherSwiftFlags, .when(configuration: .debug)),
   ]
 }
