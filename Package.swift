@@ -1,19 +1,7 @@
 // swift-tools-version: 6.0
 @preconcurrency import PackageDescription
 
-private extension PackageDescription.Target.Dependency {
-  // static let factory: Self = .product(name: "Factory", package: "Factory")
-}
-
-private extension PackageDescription.Target.PluginUsage {
-  // static let swiftGen: Self = .plugin(name: "SwiftGenPlugin", package: "SwiftGenPlugin")
-}
-
-// ref. https://github.com/treastrain/swift-upcomingfeatureflags-cheatsheet
-extension SwiftSetting {
-  static let existentialAny: Self = .enableUpcomingFeature("ExistentialAny") // SE-0335, Swift 5.6,  SwiftPM 5.8+
-  static let internalImportsByDefault: Self = .enableUpcomingFeature("InternalImportsByDefault") // SE-0409, Swift 6.0,  SwiftPM 6.0+
-}
+// swiftformat:enable empty-extensions
 
 let debugOtherSwiftFlags = [
   "-Xfrontend", "-warn-long-expression-type-checking=200",
@@ -59,10 +47,23 @@ let package = Package(
   ]
 )
 
+/// ref. https://github.com/treastrain/swift-upcomingfeatureflags-cheatsheet
+extension SwiftSetting {
+  static let existentialAny: Self = .enableUpcomingFeature("ExistentialAny") // SE-0335, Swift 5.6,  SwiftPM 5.8+
+  static let internalImportsByDefault: Self = .enableUpcomingFeature("InternalImportsByDefault") // SE-0409, Swift 6.0,  SwiftPM 6.0+
+  static let memberImportVisibility: Self = .enableUpcomingFeature("MemberImportVisibility") // SE-0444, Swift 6.1,  SwiftPM 6.1+
+  static let strictConcurrency: Self = .enableUpcomingFeature("StrictConcurrency")
+}
+
 for target in package.targets {
+  guard !target.name.hasSuffix("Mocks") else {
+    continue
+  }
+
   target.swiftSettings = [
-    .unsafeFlags(debugOtherSwiftFlags, .when(configuration: .debug)),
     .existentialAny,
     .internalImportsByDefault,
+    .memberImportVisibility,
+    .strictConcurrency,
   ]
 }
