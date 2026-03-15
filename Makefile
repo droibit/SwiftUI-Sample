@@ -4,7 +4,6 @@ PROJECT_GIT_DIR := .
 .PHONY: bootstrap
 bootstrap:
 	mint bootstrap
-	# cp -pR .githooks/* .git/hooks
 
 .PHONY: gen-project
 gen-project:
@@ -12,7 +11,7 @@ gen-project:
 	mint run xcodegen xcodegen generate -s ./App/project.yml -p ./App
 
 .PHONY: open-project
-open-project:	
+open-project:
 	open ./App/$(PROJECT_NAME).xcodeproj
 
 .PHONY: gen-mocks
