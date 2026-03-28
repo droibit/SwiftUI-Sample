@@ -2,7 +2,7 @@ PROJECT_NAME := SampleApp
 PROJECT_GIT_DIR := .
 
 DEVICE_NAME := iPhone 17
-OS_VERSION := 26.2
+OS_VERSION := 26.4
 
 .PHONY: bootstrap
 bootstrap:

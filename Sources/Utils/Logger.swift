@@ -3,7 +3,7 @@
 internal import Foundation
 internal import os
 
-public enum Logger: Sendable {
+public nonisolated enum Logger: Sendable {
   private static let logger = os.Logger(
     subsystem: Bundle.main.bundleIdentifier!,
     category: "default"
@@ -69,7 +69,7 @@ public enum Logger: Sendable {
   }
 }
 
-public func currentQueueName() -> String {
+public nonisolated func currentQueueName() -> String {
   // ref. https://stackoverflow.com/questions/39553171/how-to-get-the-current-queue-name-in-swift-3/39809760
   if let name = String(cString: __dispatch_queue_get_label(nil), encoding: .utf8) {
     return name + ", isMainThread: \(Thread.current.isMainThread)"

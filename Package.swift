@@ -1,4 +1,4 @@
-// swift-tools-version: 6.0
+// swift-tools-version: 6.2
 @preconcurrency import PackageDescription
 
 let package = Package(
@@ -43,6 +43,8 @@ extension SwiftSetting {
   static let internalImportsByDefault: Self = .enableUpcomingFeature("InternalImportsByDefault") // SE-0409, Swift 6.0,  SwiftPM 6.0+
   static let memberImportVisibility: Self = .enableUpcomingFeature("MemberImportVisibility") // SE-0444, Swift 6.1,  SwiftPM 6.1+
   static let strictConcurrency: Self = .enableUpcomingFeature("StrictConcurrency")
+  static let defaultActorIsolation: Self = .defaultIsolation(MainActor.self)
+  static let nonisolatedNonsendingByDefault: Self = .enableUpcomingFeature("NonisolatedNonsendingByDefault") // SE-0461, Swift 6.2,  SwiftPM 6.2+
 }
 
 let debugOtherSwiftFlags = [
@@ -61,6 +63,8 @@ for target in package.targets {
     .internalImportsByDefault,
     .memberImportVisibility,
     .strictConcurrency,
+    .defaultActorIsolation,
+    .nonisolatedNonsendingByDefault,
     .unsafeFlags(debugOtherSwiftFlags, .when(configuration: .debug)),
   ]
 }
