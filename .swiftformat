@@ -32,6 +32,7 @@
 --enable blockComments
 --enable noGuardInTests
 --enable preferFinalClasses
+--enable preferSwiftStringAPI
 --enable privateStateVariables
 --enable noForceTryInTests
 --enable noForceUnwrapInTests
