@@ -50,7 +50,7 @@ extension SwiftSetting {
 let debugOtherSwiftFlags = [
   "-Xfrontend", "-warn-long-expression-type-checking=200",
   "-Xfrontend", "-warn-long-function-bodies=200",
-  "-enable-actor-data-race-checks",
+  // "-enable-actor-data-race-checks",
 ]
 
 for target in package.targets {
