@@ -27,6 +27,7 @@ opt_in_rules:
   - direct_return
   - discarded_notification_center_observer
   - discouraged_assert
+  # - discouraged_default_parameter
   - discouraged_none_name
   - discouraged_object_literal
   - discouraged_optional_boolean
@@ -110,6 +111,7 @@ opt_in_rules:
   # - quick_discouraged_pending_test
   - raw_value_for_camel_cased_codable_enum
   - reduce_into
+  - redundant_final
   - redundant_nil_coalescing
   # - redundant_self
   - redundant_type_annotation
