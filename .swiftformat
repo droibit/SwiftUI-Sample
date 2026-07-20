@@ -31,7 +31,11 @@
 --enable isEmpty
 --enable blockComments
 --enable noGuardInTests
+--enable preferContains
 --enable preferFinalClasses
+--enable preferFirstWhere
+--enable preferFlatMap
+--enable preferMinOverSorted
 --enable preferSwiftStringAPI
 --enable privateStateVariables
 --enable noForceTryInTests
